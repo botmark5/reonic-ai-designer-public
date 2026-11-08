@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Planner design view</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+.badge{display:inline-flex;align-items:center;gap:6px;font:500 12px/16px Geist,system-ui,sans-serif;padding:2px 8px;border-radius:9999px;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex:none}
+.card{background:#ffffff;border:1px solid #e4e4e7;border-radius:10px}
+.lbl{font:500 12px/16px Geist,system-ui,sans-serif;letter-spacing:0.02em;color:#71717a;text-transform:uppercase}
+.metric{font:500 30px/1 "Geist Mono",ui-monospace,monospace;letter-spacing:-0.02em;color:#1b1d20}
+.metric small{font-size:15px;color:#71717a}
+.mono{font:500 13px/18px "Geist Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.track{position:relative;height:8px;background:#f4f4f5;border-radius:6px}
+.band{position:absolute;top:0;bottom:0;opacity:.35;border-radius:6px}
+.mark{position:absolute;top:-4px;width:4px;height:16px;margin-left:-2px;background:#1b1d20;border-radius:2px}
+.scale{display:flex;justify-content:space-between;font:500 11px/14px "Geist Mono",monospace;color:#71717a;margin-top:6px}
+.reasons{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;font-size:13px;line-height:19px;color:#3f3f46}
+.pill{font:500 13px/18px Geist,sans-serif;background:#f4f4f5;color:#1b1d20;border:0;border-radius:9999px;padding:6px 12px}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font:500 12px/16px Geist,sans-serif;color:#71717a}
+.field input,.field select{height:36px;border:1px solid #d4d4d8;border-radius:6px;padding:0 10px;font:400 14px Geist,sans-serif;color:#1b1d20;background:#ffffff}
+.inbox a{display:flex;flex-direction:column;gap:4px;padding:10px 12px;border-radius:8px;text-decoration:none;color:#1b1d20}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{font:500 11px/14px Geist,sans-serif;color:#71717a;text-align:right;padding:6px 0;border-bottom:1px solid #e4e4e7}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl td{padding:7px 0;border-bottom:1px solid #f4f4f5;text-align:right;font:500 13px/18px "Geist Mono",monospace;color:#1b1d20}
+a{color:#1b1d20}
+</style>
+</helmet>
+<div style="box-sizing: border-box; min-height: 1060px; background: #fdfdfb; color: #1b1d20; font-family: Geist, system-ui, sans-serif; display: flex; flex-direction: column;">
+  <header style="display: flex; align-items: center; gap: 16px; padding: 14px 28px; border-bottom: 1px solid #e4e4e7; background: #fdfdfb; flex-wrap: wrap;">
+    <img src="/_blob/a92576cafea2dd8d46bc31749df15a26" alt="Reonic" style="height: 22px;">
+    <span style="font-size: 14px; font-weight: 500; color: #71717a;">AI Designer</span>
+    <nav style="display: flex; gap: 4px; margin-left: 24px;" aria-label="Main">
+      <a href="#" style="padding: 6px 12px; border-radius: 9999px; background: #f4f4f5; font-size: 14px; font-weight: 500; text-decoration: none;">Designs</a>
+      <a href="#" style="padding: 6px 12px; border-radius: 9999px; font-size: 14px; color: #3f3f46; text-decoration: none;">Reality check</a>
+      <a href="#" style="padding: 6px 12px; border-radius: 9999px; font-size: 14px; color: #3f3f46; text-decoration: none;">Catalogue</a>
+    </nav>
+    <span class="badge" style="margin-left: auto; background: #f4f4f5; color: #3f3f46;"><span class="dot" style="background: #71717a;"></span>Example data</span>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 24px; padding: 24px 28px; align-items: flex-start;">
+    <aside style="flex: 1 1 260px; max-width: 300px; display: flex; flex-direction: column; gap: 20px; min-width: 0;">
+      <section style="display: flex; flex-direction: column; gap: 6px;">
+        <span class="lbl">Inbox</span>
+        <div class="inbox card" style="padding: 4px; display: flex; flex-direction: column;">
+          <a href="#" style="background: #fdf1e7;"><span style="display: flex; justify-content: space-between; gap: 8px;"><b style="font-weight: 600; font-size: 14px;">Weber, Augsburg</b><span class="mono" style="color: #71717a; font-size: 12px;">4 min</span></span><span class="badge" style="align-self: flex-start; background: #ffffff; color: #b4541f;"><span class="dot" style="background: #ef8a4c;"></span>From call · new</span></a>
+          <a href="#"><span style="display: flex; justify-content: space-between; gap: 8px;"><b style="font-weight: 500; font-size: 14px;">Huber, Landsberg</b><span class="mono" style="color: #71717a; font-size: 12px;">1 h</span></span><span style="font-size: 12px; color: #71717a;">In review</span></a>
+          <a href="#"><span style="display: flex; justify-content: space-between; gap: 8px;"><b style="font-weight: 500; font-size: 14px;">Schmidt, Friedberg</b><span class="mono" style="color: #71717a; font-size: 12px;">Yesterday</span></span><span style="font-size: 12px; color: #71717a;">Sent to homeowner</span></a>
+        </div>
+      </section>
+      <section class="card" style="padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+        <span class="lbl">The home</span>
+        <div class="field"><label for="kwh">Annual consumption (kWh)</label><input id="kwh" value="4,800"></div>
+        <div class="field"><label for="price">Electricity price (€/kWh)</label><input id="price" value="0.32"></div>
+        <div class="field"><label for="hh">Household</label><select id="hh"><option>Family of four</option></select></div>
+        <div class="field"><label for="ev">Electric car (km / year)</label><input id="ev" value="15,000 · from spring"></div>
+        <div class="field"><label for="heat">Heating</label><select id="heat"><option>Gas boiler, 15 years</option></select></div>
+        <div class="field"><label for="roof">Roof</label><select id="roof"><option>Concrete tile, south</option></select></div>
+      </section>
+    </aside>
+
+    <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <span class="badge" style="align-self: flex-start; background: #fdf1e7; color: #b4541f;"><span class="dot" style="background: #ef8a4c;"></span>Drafted by AI from a call</span>
+          <h1 style="margin: 0; font-size: 34px; line-height: 1.05; font-weight: 400; letter-spacing: -0.02em;">Weber, Augsburg</h1>
+          <p style="margin: 0; font-size: 14px; color: #71717a;">Based on 214 similar homes from your past offers</p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="pill">Compare with expert</button>
+          <button type="button" class="pill">Send to homeowner</button>
+          <button type="button" style="font: 500 14px/20px Geist, sans-serif; background: #1b1d20; color: #fdfdfb; border: 0; border-radius: 9999px; padding: 8px 16px;">Use this design</button>
+        </div>
+      </div>
+
+      <form style="display: flex; gap: 8px; align-items: center; border: 1px solid #d4d4d8; border-radius: 9999px; padding: 6px 6px 6px 16px; background: #ffffff;" aria-label="Refine the design">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef8a4c" stroke-width="1.8" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg>
+        <label for="refine" style="position: absolute; left: -9999px;">Tell the designer what changed</label>
+        <input id="refine" value="They want to be as independent as possible, budget is fine" style="flex: 1; border: 0; outline: none; font: 400 14px Geist, sans-serif; color: #1b1d20; background: transparent; min-width: 0;">
+        <button type="button" style="font: 500 14px Geist, sans-serif; background: #1b1d20; color: #fdfdfb; border: 0; border-radius: 9999px; padding: 7px 14px;">Update design</button>
+      </form>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #3f3f46; flex-wrap: wrap;">
+        <span style="background: #f2d473; color: #1b1d20; border-radius: 6px; padding: 2px 8px; font-weight: 500;">Changed</span>
+        <span>Battery 7 → <b class="mono">10 kWh</b> for more evening self-supply. PV stays at the roof limit.</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+        <article class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <header style="display: flex; align-items: center; gap: 8px;"><span class="dot" style="width: 10px; height: 10px; background: #e9a23b;"></span><h2 style="margin: 0; font-size: 17px; font-weight: 600; flex: 1;">Solar</h2><span class="badge" style="background: #d9fdd3; color: #047857;"><span class="dot" style="background: #10b981;"></span>Typical</span></header>
+          <p class="metric" style="margin: 0;">10.8 <small>kWp</small></p>
+          <div><div class="track"><div class="band" style="left: 35%; width: 30%; background: #e9a23b;"></div><div class="mark" style="left: 55%;"></div></div><div class="scale"><span>6</span><span>9</span><span>12</span><span>15 kWp</span></div></div>
+          <ul class="reasons"><li>24 panels × 450 W fit the south roof.</li><li>Homes using ~4,800 kWh with an EV got 9 to 11 kWp.</li></ul>
+          <footer style="display: flex; gap: 8px;"><button type="button" class="pill">Lock</button><button type="button" class="pill">Change</button></footer>
+        </article>
+        <article class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 14px; outline: 1.5px solid #f2d473;">
+          <header style="display: flex; align-items: center; gap: 8px;"><span class="dot" style="width: 10px; height: 10px; background: #2f9fd0;"></span><h2 style="margin: 0; font-size: 17px; font-weight: 600; flex: 1;">Battery</h2><span class="badge" style="background: #d9fdd3; color: #047857;"><span class="dot" style="background: #10b981;"></span>Typical</span></header>
+          <p class="metric" style="margin: 0;"><span style="background: #f2d473; border-radius: 4px; padding: 0 4px;">10</span> <small>kWh</small></p>
+          <div><div class="track"><div class="band" style="left: 25%; width: 40%; background: #2f9fd0;"></div><div class="mark" style="left: 58%;"></div></div><div class="scale"><span>5</span><span>7</span><span>10</span><span>15 kWh</span></div></div>
+          <ul class="reasons"><li>Midday surplus covers a 10 kWh battery most days.</li><li>The installer's next sizes are 7 and 14 kWh.</li></ul>
+          <footer style="display: flex; gap: 8px;"><button type="button" class="pill">Lock</button><button type="button" class="pill">Change</button></footer>
+        </article>
+        <article class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <header style="display: flex; align-items: center; gap: 8px;"><span class="dot" style="width: 10px; height: 10px; background: #52525b;"></span><h2 style="margin: 0; font-size: 17px; font-weight: 600; flex: 1;">Wallbox</h2><span class="badge" style="background: #f4f4f5; color: #3f3f46;"><span class="dot" style="background: #71717a;"></span>Set by planner</span></header>
+          <p class="metric" style="margin: 0;">11 <small>kW</small></p>
+          <ul class="reasons"><li>EV from spring, ~15,000 km a year.</li><li>11 kW is enough for overnight charging.</li></ul>
+          <footer style="display: flex; gap: 8px;"><button type="button" class="pill" aria-pressed="true" style="background: #1b1d20; color: #fdfdfb;">Locked</button><button type="button" class="pill">Change</button></footer>
+        </article>
+        <article class="card" style="padding: 20px; display: flex; flex-direction: column; gap: 14px;">
+          <header style="display: flex; align-items: center; gap: 8px;"><span class="dot" style="width: 10px; height: 10px; background: #d4604a;"></span><h2 style="margin: 0; font-size: 17px; font-weight: 600; flex: 1;">Heat pump</h2><span class="badge" style="background: #fef3c7; color: #b45309;"><span class="dot" style="background: #f59e0b;"></span>Later option</span></header>
+          <p class="metric" style="margin: 0; color: #71717a;">None <small>now</small></p>
+          <ul class="reasons"><li>The gas boiler still works; offer an 8 kW heat pump as a separate option.</li><li>Sized by rule from heating demand: too few heat pump offers in the data to learn from.</li></ul>
+          <footer style="display: flex; gap: 8px;"><button type="button" class="pill">Add as option</button></footer>
+        </article>
+      </div>
+    </main>
+
+    <aside style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 16px; min-width: 0;">
+      <section class="card" style="padding: 16px; display: flex; flex-direction: column; gap: 8px;">
+        <span class="lbl">Why this design</span>
+        <p style="margin: 0; font-size: 14px; line-height: 21px; color: #3f3f46;">A family of four at 4,800 kWh, adding an EV, sits in the middle of what this installer usually sells. The roof allows 24 panels, so solar is sized to the roof. A 10 kWh battery moves the midday surplus into the evening when the car charges. The heat pump stays a separate option because the boiler is not due yet.</p>
+      </section>
+      <section class="card" style="padding: 16px; display: flex; flex-direction: column; gap: 8px;">
+        <span class="lbl">Similar homes</span>
+        <table class="tbl">
+          <thead><tr><th scope="col">Home</th><th scope="col">kWh / yr</th><th scope="col">PV kWp</th><th scope="col">Battery</th></tr></thead>
+          <tbody>
+            <tr><td>#3f21 · EV</td><td>4,700</td><td>10.8</td><td>10</td></tr>
+            <tr><td>#9a0c · EV</td><td>5,000</td><td>9.9</td><td>10</td></tr>
+            <tr><td>#77be</td><td>4,500</td><td>9.0</td><td>7</td></tr>
+            <tr><td>#c410 · EV</td><td>5,200</td><td>11.7</td><td>14</td></tr>
+            <tr><td>#0d5a</td><td>4,900</td><td>10.8</td><td>10</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="card" style="padding: 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 12px; color: #71717a;">Solar yield</span><span class="mono" style="font-size: 15px;">≈ 10,300 kWh</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 12px; color: #71717a;">Own use</span><span class="mono" style="font-size: 15px;">[x] %</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 12px; color: #71717a;">Self-sufficiency</span><span class="mono" style="font-size: 15px;">[x] %</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 12px; color: #71717a;">Checks</span><span class="badge" style="align-self: flex-start; background: #d9fdd3; color: #047857;"><span class="dot" style="background: #10b981;"></span>All plausible</span></div>
+      </section>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1060}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

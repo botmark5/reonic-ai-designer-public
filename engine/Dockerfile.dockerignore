@@ -1,0 +1,9 @@
+# Used by `docker build -f engine/Dockerfile .` (BuildKit picks up <Dockerfile>.dockerignore)
+*
+!engine/
+!data/raw/
+engine/.env
+engine/.env.*
+**/__pycache__/
+**/.pytest_cache/
+engine/tests/

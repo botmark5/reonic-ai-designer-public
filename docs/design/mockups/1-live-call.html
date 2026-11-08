@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Live site-visit call</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+:root{--s0:#fdfdfb;--s1:#ffffff;--s2:#f4f4f5;--bd:#e4e4e7;--ink:#1b1d20;--body:#3f3f46;--muted:#71717a;--amber:#e9a23b;--orange:#ef8a4c;--salmon:#ec8a7c;--aitext:#b4541f;--aitint:#fdf1e7;--ok:#10b981;--oktext:#047857;--oktint:#d9fdd3;--pv:#e9a23b;--bat:#2f9fd0;--wb:#52525b;--hp:#d4604a}
+.badge{display:inline-flex;align-items:center;gap:6px;font:500 12px/16px Geist,system-ui,sans-serif;padding:2px 8px;border-radius:9999px}
+.dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.fact{display:flex;align-items:center;gap:10px;font:400 14px/20px Geist,system-ui,sans-serif;color:#3f3f46}
+.fact b{font-weight:500;color:#1b1d20}
+.chk{width:18px;height:18px;border-radius:50%;background:#d9fdd3;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.pend{width:18px;height:18px;border-radius:50%;border:1.5px dashed #a1a1aa;box-sizing:border-box;flex:none}
+.num{font:500 15px/20px "Geist Mono",ui-monospace,monospace;color:#1b1d20}
+.unit{color:#71717a;font-size:12px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #fdfdfb; color: #1b1d20; font-family: Geist, system-ui, sans-serif; display: flex; flex-direction: column; padding: 20px 20px 24px; gap: 16px;">
+  <div style="display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <img src="/_blob/7abd835ed8cd438d18b52244a913893f" alt="Reonic" style="width: 28px; height: 28px; border-radius: 8px;">
+      <span style="font-size: 14px; font-weight: 500; color: #71717a;">AI Designer</span>
+    </div>
+    <span class="badge" style="background: #fdf1e7; color: #b4541f;"><span class="dot" style="background: #ef8a4c; box-shadow: 0 0 0 4px rgba(239,138,76,0.18);"></span>Listening · 02:14</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 2px;">
+    <span style="font: 500 12px/16px Geist, sans-serif; letter-spacing: 0.02em; color: #71717a; text-transform: uppercase;">Site visit call</span>
+    <h1 style="margin: 0; font-size: 28px; line-height: 1.05; font-weight: 400; letter-spacing: -0.02em;">Weber, Augsburg</h1>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="align-self: flex-start; max-width: 82%; background: #f4f4f5; border-radius: 14px 14px 14px 4px; padding: 8px 12px; font-size: 14px; line-height: 20px; color: #3f3f46;">Got it, family of four with an EV from spring. What heats the house today?</div>
+    <div style="align-self: flex-end; max-width: 82%; background: #1b1d20; color: #fdfdfb; border-radius: 14px 14px 4px 14px; padding: 8px 12px; font-size: 14px; line-height: 20px;">Gas boiler, about 15 years old. Roof is concrete tile, facing south.</div>
+    <div style="align-self: flex-start; max-width: 82%; background: #f4f4f5; border-radius: 14px 14px 14px 4px; padding: 8px 12px; font-size: 14px; line-height: 20px; color: #3f3f46;">Thanks. Last one: do they already have solar or a battery?</div>
+  </div>
+
+  <section style="background: #ffffff; border: 1px solid #e4e4e7; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+    <h2 style="margin: 0 0 2px; font-size: 15px; font-weight: 600;">What I have so far</h2>
+    <div class="fact"><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5.2l2 2L8 3" stroke="#047857" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span><span>Uses <b class="num">4,800</b> <span class="unit">kWh / year</span></span></div>
+    <div class="fact"><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5.2l2 2L8 3" stroke="#047857" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span><span><b>Family of four</b>, home during the day</span></div>
+    <div class="fact"><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5.2l2 2L8 3" stroke="#047857" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span><span><b>EV from spring</b>, about <span class="num">15,000</span> <span class="unit">km / year</span></span></div>
+    <div class="fact"><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5.2l2 2L8 3" stroke="#047857" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span><span><b>Gas boiler</b>, 15 years old</span></div>
+    <div class="fact"><span class="chk"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 5.2l2 2L8 3" stroke="#047857" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span><span><b>Concrete tile</b> roof, south</span></div>
+    <div class="fact" style="color: #71717a;"><span class="pend"></span><span>Existing solar or battery: asking now</span></div>
+  </section>
+
+  <section style="border-radius: 12px; padding: 1.5px; background: linear-gradient(120deg, #e9a23b, #ef8a4c 50%, #ec8a7c);">
+    <div style="background: #ffffff; border-radius: 10.5px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 600;">Draft design</h2>
+        <span class="badge" style="background: #fdf1e7; color: #b4541f;"><span class="dot" style="background: #ef8a4c;"></span>Drafted by AI</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 12px; color: #71717a; display: flex; align-items: center; gap: 6px;"><span class="dot" style="background: #e9a23b;"></span>Solar</span><span class="num">10.8 <span class="unit">kWp</span></span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 12px; color: #71717a; display: flex; align-items: center; gap: 6px;"><span class="dot" style="background: #2f9fd0;"></span>Battery</span><span class="num">10 <span class="unit">kWh</span></span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 12px; color: #71717a; display: flex; align-items: center; gap: 6px;"><span class="dot" style="background: #52525b;"></span>Wallbox</span><span class="num">11 <span class="unit">kW</span></span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 12px; color: #71717a; display: flex; align-items: center; gap: 6px;"><span class="dot" style="background: #d4604a;"></span>Heat pump</span><span style="font: 500 15px/20px Geist, sans-serif; color: #71717a;">Later option</span></div>
+      </div>
+      <p style="margin: 0; font-size: 13px; line-height: 18px; color: #71717a;">Lands in your Reonic inbox when you hang up.</p>
+    </div>
+  </section>
+
+  <div style="margin-top: auto; display: flex; gap: 10px;">
+    <button type="button" style="flex: 1; height: 48px; border: 0; border-radius: 9999px; background: #f4f4f5; color: #1b1d20; font: 500 15px Geist, sans-serif;">Mute</button>
+    <button type="button" style="flex: 2; height: 48px; border: 0; border-radius: 9999px; background: #1b1d20; color: #fdfdfb; font: 500 15px Geist, sans-serif;">End call and send draft</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

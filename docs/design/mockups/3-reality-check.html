@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reality check</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+.badge{display:inline-flex;align-items:center;gap:6px;font:500 12px/16px Geist,system-ui,sans-serif;padding:2px 8px;border-radius:9999px;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex:none}
+.card{background:#ffffff;border:1px solid #e4e4e7;border-radius:10px}
+.lbl{font:500 12px/16px Geist,system-ui,sans-serif;letter-spacing:0.02em;color:#71717a;text-transform:uppercase}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th{font:500 12px/16px Geist,sans-serif;color:#71717a;text-align:left;padding:10px 12px;border-bottom:1px solid #e4e4e7}
+.tbl td{padding:14px 12px;border-bottom:1px solid #f4f4f5;font:500 15px/20px "Geist Mono",monospace;color:#1b1d20;font-variant-numeric:tabular-nums}
+.tbl td:first-child{font:500 15px/20px Geist,sans-serif}
+.tile{display:flex;flex-direction:column;gap:6px;padding:18px}
+.tile .v{font:500 30px/1 "Geist Mono",monospace;letter-spacing:-0.02em}
+.tile .v small{font-size:14px;color:#71717a}
+.tile .b{font-size:13px;color:#71717a}
+a{color:#1b1d20}
+</style>
+</helmet>
+<div style="box-sizing: border-box; min-height: 820px; background: #fdfdfb; color: #1b1d20; font-family: Geist, system-ui, sans-serif; display: flex; flex-direction: column;">
+  <header style="display: flex; align-items: center; gap: 16px; padding: 14px 28px; border-bottom: 1px solid #e4e4e7; flex-wrap: wrap;">
+    <img src="/_blob/a92576cafea2dd8d46bc31749df15a26" alt="Reonic" style="height: 22px;">
+    <span style="font-size: 14px; font-weight: 500; color: #71717a;">AI Designer</span>
+    <nav style="display: flex; gap: 4px; margin-left: 24px;" aria-label="Main">
+      <a href="#" style="padding: 6px 12px; border-radius: 9999px; font-size: 14px; color: #3f3f46; text-decoration: none;">Designs</a>
+      <a href="#" style="padding: 6px 12px; border-radius: 9999px; background: #f4f4f5; font-size: 14px; font-weight: 500; text-decoration: none;">Reality check</a>
+      <a href="#" style="padding: 6px 12px; border-radius: 9999px; font-size: 14px; color: #3f3f46; text-decoration: none;">Catalogue</a>
+    </nav>
+  </header>
+
+  <div style="padding: 28px; display: flex; flex-direction: column; gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <h1 style="margin: 0; font-size: 34px; line-height: 1.05; font-weight: 400; letter-spacing: -0.02em;">Does it design like your experts?</h1>
+      <p style="margin: 0; font-size: 15px; color: #3f3f46;">Every number below comes from homes the engine never saw while learning.</p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+      <section class="card" style="flex: 999 1 560px; min-width: 0; padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><span class="lbl">One held-out home</span><span style="font-size: 17px; font-weight: 600;">Project ex44 · 4,500 kWh · no EV · gas</span></div>
+          <div style="display: flex; gap: 8px;"><button type="button" style="font: 500 13px Geist, sans-serif; background: #f4f4f5; border: 0; border-radius: 9999px; padding: 6px 12px;">Previous</button><button type="button" style="font: 500 13px Geist, sans-serif; background: #f4f4f5; border: 0; border-radius: 9999px; padding: 6px 12px;">Random home</button></div>
+        </div>
+        <div style="overflow-x: auto;">
+        <table class="tbl">
+          <thead><tr><th scope="col">Component</th><th scope="col">Our design</th><th scope="col">Expert offered</th><th scope="col">Verdict</th></tr></thead>
+          <tbody>
+            <tr><td><span class="dot" style="background: #e9a23b; margin-right: 8px;"></span>Solar</td><td>9.0 kWp</td><td>9.0 kWp</td><td><span class="badge" style="background: #d9fdd3; color: #047857;"><span class="dot" style="background: #10b981;"></span>Match</span></td></tr>
+            <tr><td><span class="dot" style="background: #2f9fd0; margin-right: 8px;"></span>Battery</td><td>10 kWh</td><td>7 · 10 · 14 kWh <span style="font: 400 12px Geist, sans-serif; color: #71717a;">(3 options)</span></td><td><span class="badge" style="background: #d9fdd3; color: #047857;"><span class="dot" style="background: #10b981;"></span>Inside offered range</span></td></tr>
+            <tr><td><span class="dot" style="background: #52525b; margin-right: 8px;"></span>Wallbox</td><td>None</td><td>None</td><td><span class="badge" style="background: #d9fdd3; color: #047857;"><span class="dot" style="background: #10b981;"></span>Match</span></td></tr>
+            <tr><td><span class="dot" style="background: #d4604a; margin-right: 8px;"></span>Heat pump</td><td>None</td><td>None</td><td><span class="badge" style="background: #d9fdd3; color: #047857;"><span class="dot" style="background: #10b981;"></span>Match</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #71717a;">The expert offered three battery variants for this home; the customer chose one of them. Any proposal inside that range counts as a hit.</p>
+      </section>
+
+      <section style="flex: 1 1 360px; max-width: 520px; min-width: 0; display: flex; flex-direction: column; gap: 12px;">
+        <span class="lbl">Across [N] held-out homes</span>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+          <div class="card tile"><span class="b">Right components chosen</span><span class="v">[xx] <small>%</small></span><span class="b">Rule of thumb: [xx] %</span></div>
+          <div class="card tile"><span class="b">Solar size error (median)</span><span class="v">[x.x] <small>kWp</small></span><span class="b">Rule of thumb: [x.x] kWp</span></div>
+          <div class="card tile"><span class="b">Battery within one size step</span><span class="v">[xx] <small>%</small></span><span class="b">Rule of thumb: [xx] %</span></div>
+          <div class="card tile"><span class="b">Inside the expert's range</span><span class="v">[xx] <small>%</small></span><span class="b">Homes with several offer options</span></div>
+        </div>
+        <div class="card" style="padding: 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <span style="font-size: 14px; font-weight: 500; flex: 1;">Learned on installer A, tested on installer B</span>
+          <span class="badge" style="background: #f4f4f5; color: #3f3f46;"><span class="dot" style="background: #71717a;"></span>[result]</span>
+        </div>
+        <p style="margin: 0; font-size: 12px; line-height: 16px; color: #71717a;">Test set: 20% of homes, split by customer, locked before training. Homes with Reonic's default 4,500 kWh are reported separately.</p>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

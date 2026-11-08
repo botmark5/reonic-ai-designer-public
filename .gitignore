@@ -1,0 +1,17 @@
+data/
+*.pdf
+.env
+.env.*
+__pycache__/
+.venv/
+node_modules/
+.next/
+.DS_Store
+engine/artifacts/*.pkl
+engine/artifacts/*.parquet
+.claude/worktrees/
+engine/artifacts/spotcheck.md
+engine/artifacts/catalogue.json
+
+# deck chart output (aggregates of Reonic data; shared via data-v1)
+docs/deck/out/

@@ -1,0 +1,35 @@
+# Homeowner economics assumptions (Germany, residential, 2026).
+# EVERY value here is a PLACEHOLDER: rough market figures, not confirmed by Reonic or the installers.
+# The data contains no prices, so savings/payback are only as good as these numbers.
+# Change values here, never in code. Read by engine/physics.py (load_economics_config).
+
+[electricity]
+default_price_eur_kwh = 0.35        # PLACEHOLDER: used when the project has no price
+price_increase_per_year = 0.03      # PLACEHOLDER: used when the project has no price increase
+feed_in_tariff_eur_kwh = 0.078      # PLACEHOLDER: EEG feed-in for <=10 kWp, partial feed-in
+
+[pv]
+capex_fixed_eur = 2500              # PLACEHOLDER: planning, scaffolding, grid registration, meter work
+capex_per_kwp_eur = 1150            # PLACEHOLDER: modules, inverter, mounting, installation
+degradation_per_year = 0.005        # PLACEHOLDER: module output loss per year
+
+[battery]
+capex_fixed_eur = 800               # PLACEHOLDER: installation, backup box
+capex_per_kwh_eur = 550             # PLACEHOLDER
+
+[wallbox]
+capex_eur = 1500                    # PLACEHOLDER: 11 kW wallbox incl. installation
+
+[heatpump]
+capex_fixed_eur = 12000             # PLACEHOLDER: hydraulics, buffer, installation, removal of old boiler
+capex_per_kw_eur = 1000             # PLACEHOLDER
+subsidy_share = 0.30                # PLACEHOLDER: BEG base subsidy share of heat pump capex
+
+[fuel]
+gas_eur_kwh = 0.11                  # PLACEHOLDER: per kWh of fuel
+oil_eur_kwh = 0.10                  # PLACEHOLDER
+other_eur_kwh = 0.11                # PLACEHOLDER: any other non-renewable heating
+boiler_efficiency = 0.90            # PLACEHOLDER: heat delivered per kWh of fuel
+
+[general]
+lifetime_years = 20                 # horizon for payback and total savings

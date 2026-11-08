@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Reonic AI Designer theme. Source of truth: docs/design/tokens.json.
+   Design tokens are exposed under their own names (bg-surface-0, text-ink-muted, bg-comp-pv, text-ai-text ...)
+   and mapped onto shadcn's semantic names (background, card, primary ...) so shadcn components inherit them. */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* --- design tokens (docs/design/tokens.json) --- */
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-ink-body: var(--ink-body);
+  --color-ink-muted: var(--ink-muted);
+  --color-primary-ink: var(--primary-ink);
+  --color-focus: var(--focus);
+  --color-ai-amber: var(--ai-amber);
+  --color-ai-orange: var(--ai-orange);
+  --color-ai-salmon: var(--ai-salmon);
+  --color-ai-text: var(--ai-text);
+  --color-ai-tint: var(--ai-tint);
+  --color-highlight: var(--highlight);
+  --color-sky: var(--sky);
+  --color-comp-pv: var(--comp-pv);
+  --color-comp-battery: var(--comp-battery);
+  --color-comp-heatpump: var(--comp-heatpump);
+  --color-comp-wallbox: var(--comp-wallbox);
+  --color-success: var(--success);
+  --color-success-text: var(--success-text);
+  --color-success-tint: var(--success-tint);
+  --color-warning: var(--warning);
+  --color-warning-text: var(--warning-text);
+  --color-warning-tint: var(--warning-tint);
+  --color-critical: var(--critical);
+  --color-critical-text: var(--critical-text);
+  --color-critical-tint: var(--critical-tint);
+
+  /* --- shadcn semantic names -> tokens --- */
+  --color-background: var(--surface-0);
+  --color-foreground: var(--ink);
+  --color-card: var(--surface-1);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface-1);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-ink);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--surface-2);
+  --color-muted-foreground: var(--ink-muted);
+  --color-accent: var(--surface-2);
+  --color-accent-foreground: var(--ink);
+  --color-destructive: var(--critical);
+  --color-border: var(--border);
+  --color-input: var(--border-strong);
+  --color-ring: var(--focus);
+  --color-chart-1: var(--comp-pv);
+  --color-chart-2: var(--comp-battery);
+  --color-chart-3: var(--comp-heatpump);
+  --color-chart-4: var(--comp-wallbox);
+  --color-chart-5: var(--sky);
+  --color-sidebar: var(--surface-1);
+  --color-sidebar-foreground: var(--ink);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-ink);
+  --color-sidebar-accent: var(--surface-2);
+  --color-sidebar-accent-foreground: var(--ink);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--focus);
+
+  /* --- type --- */
+  --font-sans: var(--font-geist-sans), "Geist Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-serif: "Noto Serif", Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-sans);
+
+  --text-display: 48px;
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: 34px;
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: 24px;
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: 18px;
+  --text-h3--line-height: 24px;
+  --text-body: 16px;
+  --text-body--line-height: 24px;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-label: 12px;
+  --text-label--line-height: 16px;
+  --text-label--letter-spacing: 0.02em;
+  --text-metric: 32px;
+  --text-metric--line-height: 1;
+  --text-metric--letter-spacing: -0.02em;
+  --text-data: 13px;
+  --text-data--line-height: 18px;
+
+  /* --- radius (tokens.json) --- */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-4xl: 28px;
+  --radius-pill: 9999px;
+
+  /* --- shadow --- */
+  --shadow-card: var(--shadow-card-value);
+  --shadow-pop: var(--shadow-pop-value);
+
+  /* --- AI gradient --- */
+  --background-image-ai: linear-gradient(90deg, var(--ai-amber), var(--ai-orange), var(--ai-salmon));
+}
+
+/* spacing tokens space-1..space-12 equal Tailwind's 4px scale (p-1 = 4px ... p-12 = 48px). */
+
+:root {
+  /* Light only (Mark, 02:35). Tuned for a projector: muted text ≥ 5.7:1 on surface-2, white cards separate from the page. */
+  --surface-0: #f6f6f3;
+  --surface-1: #ffffff;
+  --surface-2: #f4f4f5;
+  --border: #d9d9de;
+  --border-strong: #a1a1aa;
+  --ink: #1b1d20;
+  --ink-body: #3f3f46;
+  --ink-muted: #5f5f68;
+  --primary: #1b1d20;
+  --primary-ink: #fdfdfb;
+  --focus: #53bdeb;
+  --ai-amber: #e9a23b;
+  --ai-orange: #ef8a4c;
+  --ai-salmon: #ec8a7c;
+  --ai-text: #a04815;
+  --ai-tint: #fdf1e7;
+  --highlight: #f2d473;
+  --sky: #53bdeb;
+  --comp-pv: #e9a23b;
+  --comp-battery: #2f9fd0;
+  --comp-heatpump: #d4604a;
+  --comp-wallbox: #52525b;
+  --success: #10b981;
+  --success-text: #047857;
+  --success-tint: #d9fdd3;
+  --warning: #f59e0b;
+  --warning-text: #a1500a;
+  --warning-tint: #fef3c7;
+  --critical: #e11d48;
+  --critical-text: #be123c;
+  --critical-tint: #ffe4e6;
+  --shadow-card-value: 0 1px 2px rgba(16, 17, 20, 0.05);
+  --shadow-pop-value: 0 12px 32px rgba(16, 17, 20, 0.1);
+  color-scheme: light;
+}
+
+.dark {
+  --surface-0: #121315;
+  --surface-1: #1b1d20;
+  --surface-2: #26282c;
+  --border: #2e3035;
+  --border-strong: #52525b;
+  --ink: #f4f4f5;
+  --ink-body: #d4d4d8;
+  --ink-muted: #8b8b94;
+  --primary: #fdfdfb;
+  --primary-ink: #1b1d20;
+  --focus: #6cc8ef;
+  --ai-amber: #eaa94a;
+  --ai-orange: #f0955c;
+  --ai-salmon: #ef9a8e;
+  --ai-text: #f4a46a;
+  --ai-tint: #2e2017;
+  --highlight: #e2c262;
+  --sky: #6cc8ef;
+  --comp-pv: #eaa94a;
+  --comp-battery: #6cc8ef;
+  --comp-heatpump: #ef9a8e;
+  --comp-wallbox: #a1a1aa;
+  --success: #34d399;
+  --success-text: #6ee7b7;
+  --success-tint: #12301f;
+  --warning: #fbbf24;
+  --warning-text: #fcd34d;
+  --warning-tint: #33270d;
+  --critical: #fb7185;
+  --critical-text: #fda4af;
+  --critical-tint: #3b1219;
+  --shadow-card-value: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-pop-value: 0 12px 32px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-focus/60;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-surface-0 text-ink;
+    font-feature-settings: "ss01";
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* A changed value after a refine: brief highlight fill, then settle. */
+@keyframes value-changed {
+  0%, 40% { background-color: var(--highlight); color: #1b1d20; }
+  100% { background-color: transparent; }
+}
+@utility animate-value-changed {
+  animation: value-changed 1.6s ease-out;
+  border-radius: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-value-changed { animation: none; }
+}

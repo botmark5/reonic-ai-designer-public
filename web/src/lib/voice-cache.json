@@ -1,0 +1,61 @@
+{
+  "97a012a289f2035f": {
+    "text": "Here is your offer in short. We suggest 11.25 kWp solar, a 10 kWh battery and a wallbox; a heat pump is a later option. In the morning, the panels wake up with the sun and already cover breakfast. At midday the roof makes more than you need, so the battery fills up and the car charges on sunshine. In the evening, the battery takes over. Altogether you cover about 59% of your electricity yourself. The system costs about €23,238 and saves about €1,883 in the first year, so it pays for itself in about 11.2 years. Your installer will go through every detail with you.",
+    "by": "template",
+    "language": "en",
+    "segments": [
+      {
+        "text": "Here is your offer in short. We suggest 11.25 kWp solar, a 10 kWh battery and a wallbox; a heat pump is a later option.",
+        "moment": null,
+        "start_s": 0,
+        "end_s": 9.52,
+        "time_of_day_h": null
+      },
+      {
+        "text": "In the morning, the panels wake up with the sun and already cover breakfast.",
+        "moment": "morning",
+        "start_s": 10.03,
+        "end_s": 14.08,
+        "time_of_day_h": 8
+      },
+      {
+        "text": "At midday the roof makes more than you need, so the battery fills up and the car charges on sunshine.",
+        "moment": "noon",
+        "start_s": 14.52,
+        "end_s": 20.18,
+        "time_of_day_h": 12.5
+      },
+      {
+        "text": "In the evening, the battery takes over.",
+        "moment": "evening",
+        "start_s": 20.42,
+        "end_s": 22.43,
+        "time_of_day_h": 19
+      },
+      {
+        "text": "Altogether you cover about 59% of your electricity yourself.",
+        "moment": null,
+        "start_s": 22.67,
+        "end_s": 26.54,
+        "time_of_day_h": null
+      },
+      {
+        "text": "The system costs about €23,238 and saves about €1,883 in the first year, so it pays for itself in about 11.2 years.",
+        "moment": null,
+        "start_s": 26.87,
+        "end_s": 37.24,
+        "time_of_day_h": null
+      },
+      {
+        "text": "Your installer will go through every detail with you.",
+        "moment": null,
+        "start_s": 37.63,
+        "end_s": 40.26,
+        "time_of_day_h": null
+      }
+    ],
+    "duration_s": 40.26,
+    "timing": "audio",
+    "audio_path": "/voice/97a012a289f2035f.mp3"
+  }
+}
